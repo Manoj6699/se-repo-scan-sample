@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_sample_rs.IncidentHelper</api_name>
+        <client_callable>false</client_callable>
+        <description>Sample script include with deliberate best-practice violations for Scan Engine repository scanning.</description>
+        <name>IncidentHelper</name>
+        <script><![CDATA[var IncidentHelper = Class.create();
+IncidentHelper.prototype = {
+    initialize: function() {},
+
+    // NOTE: commented-out code must NOT be reported: gs.sleep(1000); eval('x');
+    assignToNetworkTeam: function(incidentId) {
+        var gr = new GlideRecord('incident');
+        if (gr.get(incidentId)) {
+            // Hard-coded sys_id of the Network group
+            gr.assignment_group = '287ebd7da9fe198100f92cc8d1d2154e';
+            gr.update();
+        }
+    },
+
+    countOpen: function() {
+        var gr = new GlideRecord('incident');
+        gr.addQuery('active', true);
+        gr.query();
+        return gr.getRowCount();
+    },
+
+    waitAndRun: function(expression) {
+        gs.sleep(5000);
+        return eval(expression);
+    },
+
+    debug: function(message) {
+        gs.log('IncidentHelper: ' + message);
+    },
+
+    type: 'IncidentHelper'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_id>0eb01349ba416b9387d83722a7890e46</sys_id>
+        <sys_name>IncidentHelper</sys_name>
+        <sys_update_name>sys_script_include_0eb01349ba416b9387d83722a7890e46</sys_update_name>
+    </sys_script_include>
+</record_update>

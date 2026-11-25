@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Sample client script that queries the server synchronously.</description>
+        <field>caller_id</field>
+        <global>true</global>
+        <name>Show caller VIP status</name>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+    var user = new GlideRecord('sys_user');
+    user.get(newValue);
+    if (user.vip == 'true') {
+        alert('Caller is a VIP');
+    }
+    var caller = g_form.getReference('caller_id');
+    g_form.setValue('location', caller.location);
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_id>e23c2b7b215b4378bdcde430261a5d75</sys_id>
+        <sys_name>Show caller VIP status</sys_name>
+        <sys_update_name>sys_script_client_e23c2b7b215b4378bdcde430261a5d75</sys_update_name>
+        <table>incident</table>
+        <type>onChange</type>
+        <ui_type>0</ui_type>
+    </sys_script_client>
+</record_update>
