@@ -9,6 +9,10 @@ A small ServiceNow app source tree with **deliberate best-practice violations**,
 | `update/sys_script_client_*.xml` | Update XML | `GlideRecord` in a client script, synchronous `g_form.getReference`, `alert` |
 | `src/fluent/server-development/script-include/ApprovalUtil.server.js` | Fluent script | `update()` and `gs.sleep` in a loop, `gs.log`, hard-coded sys_id |
 | `src/fluent/server-development/business-rule/close-children.server.js` | Fluent script | `current.update()`, `update()` in a loop |
+| `update/sys_ui_action_*.xml` | Update XML | Hard-coded instance URL and sys_id, `current.update()`, `gs.log` |
+| `update/sysauto_script_*.xml` | Update XML | `deleteRecord()` in a loop, `gs.print`, `gs.sleep` |
+| `src/fluent/client-development/client-script/set-category.client.js` | Fluent script | `GlideRecord` in a client script, DOM access with `document.getElementById`, `alert` |
+| `src/fluent/client-development/ui-script/helpers.js` | Fluent script | `eval`, synchronous `g_form.getReference` |
 
 Which findings appear depends on the active `sn_se_definition` records on your instance.
 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name>reassign_to_network</action_name>
+        <active>true</active>
+        <client>false</client>
+        <condition>current.active == true</condition>
+        <form_button>true</form_button>
+        <name>Reassign to Network</name>
+        <order>100</order>
+        <script><![CDATA[// Hard-coded instance URL and sys_id
+var url = 'https://dev12345.service-now.com/nav_to.do?uri=incident.do?sys_id=' + current.sys_id;
+current.assignment_group = '287ebd7da9fe198100f92cc8d1d2154e';
+current.work_notes = 'Reassigned. Link: ' + url;
+current.update();
+gs.log('Reassigned ' + current.number);
+action.setRedirectURL(current);]]></script>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_id>4066e04f2c1fbf85bcacaf15bd6976ab</sys_id>
+        <sys_name>Reassign to Network</sys_name>
+        <sys_update_name>sys_ui_action_4066e04f2c1fbf85bcacaf15bd6976ab</sys_update_name>
+        <table>incident</table>
+    </sys_ui_action>
+</record_update>

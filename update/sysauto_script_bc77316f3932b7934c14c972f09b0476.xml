@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <name>Nightly incident cleanup</name>
+        <run_type>daily</run_type>
+        <script><![CDATA[var gr = new GlideRecord('incident');
+gr.addQuery('state', 7);
+gr.query();
+while (gr.next()) {
+    gr.deleteRecord();
+}
+gs.print('Cleanup finished');
+gs.sleep(10000);]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_id>bc77316f3932b7934c14c972f09b0476</sys_id>
+        <sys_name>Nightly incident cleanup</sys_name>
+        <sys_update_name>sysauto_script_bc77316f3932b7934c14c972f09b0476</sys_update_name>
+    </sysauto_script>
+</record_update>
