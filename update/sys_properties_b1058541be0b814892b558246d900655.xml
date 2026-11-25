@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <description>ACLs on client GlideRecord (insecure: disabled)</description>
+        <ignore_cache>false</ignore_cache>
+        <is_private>false</is_private>
+        <name>glide.script.secure.ajaxgliderecord</name>
+        <read_roles/>
+        <suffix/>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_id>b1058541be0b814892b558246d900655</sys_id>
+        <sys_name>glide.script.secure.ajaxgliderecord</sys_name>
+        <sys_update_name>sys_properties_b1058541be0b814892b558246d900655</sys_update_name>
+        <type>true_false</type>
+        <value>false</value>
+        <write_roles/>
+    </sys_properties>
+</record_update>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <description>Block blank passwords (insecure: disabled)</description>
+        <ignore_cache>false</ignore_cache>
+        <is_private>false</is_private>
+        <name>glide.login.no_blank_password</name>
+        <read_roles/>
+        <suffix/>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_id>5d1448e5979ad4ccd02390265821c9ec</sys_id>
+        <sys_name>glide.login.no_blank_password</sys_name>
+        <sys_update_name>sys_properties_5d1448e5979ad4ccd02390265821c9ec</sys_update_name>
+        <type>true_false</type>
+        <value>false</value>
+        <write_roles/>
+    </sys_properties>
+</record_update>

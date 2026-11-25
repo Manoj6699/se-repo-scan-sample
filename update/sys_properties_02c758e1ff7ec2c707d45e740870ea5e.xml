@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <description>Session timeout in minutes (too long: 8 hours)</description>
+        <ignore_cache>false</ignore_cache>
+        <is_private>false</is_private>
+        <name>glide.ui.session_timeout</name>
+        <read_roles/>
+        <suffix/>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_id>02c758e1ff7ec2c707d45e740870ea5e</sys_id>
+        <sys_name>glide.ui.session_timeout</sys_name>
+        <sys_update_name>sys_properties_02c758e1ff7ec2c707d45e740870ea5e</sys_update_name>
+        <type>integer</type>
+        <value>480</value>
+        <write_roles/>
+    </sys_properties>
+</record_update>
