@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <description>Run client-generated scripts in the sandbox (insecure: disabled)</description>
+        <ignore_cache>false</ignore_cache>
+        <is_private>false</is_private>
+        <name>glide.script.use.sandbox</name>
+        <read_roles/>
+        <suffix/>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_id>d30272bf728534cb7b93b0c17e398d90</sys_id>
+        <sys_name>glide.script.use.sandbox</sys_name>
+        <sys_update_name>sys_properties_d30272bf728534cb7b93b0c17e398d90</sys_update_name>
+        <type>true_false</type>
+        <value>false</value>
+        <write_roles/>
+    </sys_properties>
+</record_update>

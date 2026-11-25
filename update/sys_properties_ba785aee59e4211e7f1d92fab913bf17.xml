@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <description>Use CSRF tokens (insecure: disabled)</description>
+        <ignore_cache>false</ignore_cache>
+        <is_private>false</is_private>
+        <name>glide.security.use_csrf_token</name>
+        <read_roles/>
+        <suffix/>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_id>ba785aee59e4211e7f1d92fab913bf17</sys_id>
+        <sys_name>glide.security.use_csrf_token</sys_name>
+        <sys_update_name>sys_properties_ba785aee59e4211e7f1d92fab913bf17</sys_update_name>
+        <type>true_false</type>
+        <value>false</value>
+        <write_roles/>
+    </sys_properties>
+</record_update>

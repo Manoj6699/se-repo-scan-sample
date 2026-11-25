@@ -14,7 +14,9 @@ A small ServiceNow app source tree with **deliberate best-practice violations**,
 | `src/fluent/client-development/client-script/set-category.client.js` | Fluent script | `GlideRecord` in a client script, DOM access with `document.getElementById`, `alert` |
 | `src/fluent/client-development/ui-script/helpers.js` | Fluent script | `eval`, synchronous `g_form.getReference` |
 
-Which findings appear depends on the active `sn_se_definition` records on your instance.
+| `update/sys_properties_*.xml` (8 files) | Update XML | Insecure or poor property values, checked by **System Property** definitions with the same property name: `glide.ui.escape_text=false`, `glide.ui.escape_all_script=false`, `glide.script.use.sandbox=false`, `glide.security.use_csrf_token=false`, `glide.cookies.http_only=false`, `glide.login.no_blank_password=false`, `glide.script.secure.ajaxgliderecord=false`, `glide.ui.session_timeout=480` |
+
+Which findings appear depends on the active `sn_se_definition` records on your instance. A property file only produces a finding when an active System Property definition has the same **Property name** and the value breaks its operator.
 
 ## Scan it
 
