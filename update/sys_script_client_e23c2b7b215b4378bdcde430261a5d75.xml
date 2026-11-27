@@ -16,6 +16,14 @@
     }
     var caller = g_form.getReference('caller_id');
     g_form.setValue('location', caller.location);
+    var manager = g_form.getReference('assigned_to');
+    g_form.setValue('company', manager.company);
+    var group = new GlideRecord('sys_user_group');
+    group.get(g_form.getValue('assignment_group'));
+    if (!group.active) {
+        alert('The assignment group is inactive');
+    }
+    alert('Caller details updated');
 }]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
         <sys_id>e23c2b7b215b4378bdcde430261a5d75</sys_id>
