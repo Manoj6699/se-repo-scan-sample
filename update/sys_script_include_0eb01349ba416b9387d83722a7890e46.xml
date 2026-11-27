@@ -14,8 +14,10 @@ IncidentHelper.prototype = {
     assignToNetworkTeam: function(incidentId) {
         var gr = new GlideRecord('incident');
         if (gr.get(incidentId)) {
-            // Hard-coded sys_id of the Network group
+            // Hard-coded sys_ids of the Network group, its manager and the location
             gr.assignment_group = '287ebd7da9fe198100f92cc8d1d2154e';
+            gr.assigned_to = '46d44a23a9fe19810012d100cca80666';
+            gr.location = '25ab9c4d0a0a0bb300f7dabdc0ca7c1c';
             gr.update();
         }
     },
@@ -24,16 +26,30 @@ IncidentHelper.prototype = {
         var gr = new GlideRecord('incident');
         gr.addQuery('active', true);
         gr.query();
+        gs.log('Open incidents: ' + gr.getRowCount());
+        var tasks = new GlideRecord('task');
+        tasks.addQuery('active', true);
+        tasks.query();
+        gs.log('Open tasks: ' + tasks.getRowCount());
         return gr.getRowCount();
     },
 
-    waitAndRun: function(expression) {
+    waitAndRun: function(expression, retries) {
         gs.sleep(5000);
-        return eval(expression);
+        var result = eval(expression);
+        for (var i = 0; i < retries; i++) {
+            gs.sleep(1000);
+            result = eval(expression + ' + ' + i);
+        }
+        gs.sleep(2000);
+        return result;
     },
 
     debug: function(message) {
         gs.log('IncidentHelper: ' + message);
+        gs.log('IncidentHelper user: ' + gs.getUserName());
+        gs.print('IncidentHelper done');
+        gs.log('IncidentHelper end');
     },
 
     type: 'IncidentHelper'

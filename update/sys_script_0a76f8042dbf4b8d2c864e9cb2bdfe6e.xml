@@ -13,8 +13,17 @@
     if (current.impact == 1 && current.urgency == 1) {
         current.priority = 1;
         current.update();
+        gs.log('Priority 1 set for ' + current.number);
+    } else if (current.impact == 2) {
+        current.priority = 3;
+        current.update();
+        gs.log('Priority 3 set for ' + current.number);
     }
-    gs.log('Priority set for ' + current.number);
+    if (current.assignment_group == '287ebd7da9fe198100f92cc8d1d2154e') {
+        current.work_notes = 'Routed to Network';
+        current.update();
+    }
+    gs.log('Priority rule finished for ' + current.number);
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_id>0a76f8042dbf4b8d2c864e9cb2bdfe6e</sys_id>
